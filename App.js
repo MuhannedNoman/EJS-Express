@@ -7,7 +7,9 @@ app.set('view engine','ejs');
 
 app.get("/:userQuery", (request, response) => {
   response.render('index',{data : {userQuery : request.params.userQuery,
-                                  searchResults : ['firstStuff','secondStuff','thirdStuff']}});
+                                  searchResults : ['firstStuff','secondStuff','thirdStuff'],
+                                  loggedIn : true,
+                                  userName : 'Hello World'}});
 });
 
 // app.get("/test", (request, response) => {
