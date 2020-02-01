@@ -5,8 +5,9 @@ const app = express();
 app.use('/public',express.static(path.join(__dirname,'static')));
 app.set('view engine','ejs');
 
-app.get("/", (request, response) => {
-  response.render('index');
+app.get("/:userQuery", (request, response) => {
+  response.render('index',{data : {userQuery : request.params.userQuery,
+                                  searchResults : ['firstStuff','secondStuff','thirdStuff']}});
 });
 
 // app.get("/test", (request, response) => {

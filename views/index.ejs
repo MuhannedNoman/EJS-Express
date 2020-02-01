@@ -7,11 +7,11 @@
     <title>Yes</title>
 </head>
 <body>
-    <h1>You searched for : Stuff</h1>
+    <h1>You searched for : <%= data.userQuery %></h1>
     <ul>
-        <li>Some Stuff</li>
-        <li>Some Other Stuff</li>
-        <li>Some Other Other Stuff</li>
+        <% data.searchResults.forEach(result => { %>
+            <li> <%= result %>  </li>
+        <% }) %>
     </ul>
 </body>
 </html>
